@@ -1,0 +1,140 @@
+<form
+  (ngSubmit)="onSubmitForm()"
+  class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-6 p-6 bg-white rounded-b shadow-lg"
+>
+  <div>
+    <label class="text-xs block mb-1">First Name</label>
+    <input
+      pInputText
+      [(ngModel)]="card.firstName"
+      name="firstName"
+      (ngModelChange)="onInputChange()"
+      class="w-full border-0 border-b-2 border-[#2e2e38] focus:outline-none focus:border-[#2e2e38]"
+      style="border-bottom: 1px solid #d1d5db;"
+      required
+    />
+  </div>
+
+  <div>
+    <label class="text-xs block mb-1">Last Name</label>
+    <input
+      pInputText
+      [(ngModel)]="card.lastName"
+      name="lastName"
+      (ngModelChange)="onInputChange()"
+      class="w-full border-0 border-b-2 border-[#2e2e38] focus:outline-none focus:border-[#2e2e38]"
+      style="border-bottom: 1px solid #d1d5db;"
+      required
+    />
+  </div>
+
+  <div>
+    <label class="text-xs block mb-1">Company Name</label>
+    <input
+      pInputText
+      [(ngModel)]="card.company"
+      name="company"
+      (ngModelChange)="onInputChange()"
+      class="w-full border-0 border-b-2 border-[#2e2e38] focus:outline-none focus:border-[#2e2e38]"
+      style="border-bottom: 1px solid #d1d5db;"
+      required
+    />
+  </div>
+
+  <div>
+    <label class="text-xs block mb-1">Degree(s)</label>
+    <input
+      pInputText
+      [(ngModel)]="card.department"
+      name="department"
+      (ngModelChange)="onInputChange()"
+      class="w-full border-0 border-b-2 border-[#2e2e38] focus:outline-none focus:border-[#2e2e38]"
+      style="border-bottom: 1px solid #d1d5db;"
+    />
+  </div>
+
+  <div>
+    <label class="text-xs block mb-1">Email</label>
+    <input
+      pInputText
+      [(ngModel)]="card.email"
+      name="email"
+      (ngModelChange)="onInputChange()"
+      class="w-full border-0 border-b-2 border-[#2e2e38] focus:outline-none focus:border-[#2e2e38]"
+      style="border-bottom: 1px solid #d1d5db;"
+      required
+    />
+  </div>
+
+  <div>
+    <label class="text-xs block mb-1">Job Title</label>
+    <input
+      pInputText
+      [(ngModel)]="card.jobTitle"
+      name="jobTitle"
+      (ngModelChange)="onInputChange()"
+      class="w-full border-0 border-b-2 border-[#2e2e38] focus:outline-none focus:border-[#2e2e38]"
+      style="border-bottom: 1px solid #d1d5db;"
+    />
+  </div>
+
+  <div>
+    <label class="text-xs block mb-1">Street</label>
+    <input
+      pInputText
+      [(ngModel)]="card.address"
+      name="address"
+      (ngModelChange)="onInputChange()"
+      class="w-full border-0 border-b-2 border-[#2e2e38] focus:outline-none focus:border-[#2e2e38]"
+      style="border-bottom: 1px solid #d1d5db;"
+    />
+  </div>
+
+  <div>
+    <label class="text-xs block mb-1">Postal Code</label>
+    <input
+      pInputText
+      [(ngModel)]="card.postalCode"
+      name="postalCode"
+      (ngModelChange)="onInputChange()"
+      class="w-full border-0 border-b-2 border-[#2e2e38] focus:outline-none focus:border-[#2e2e38]"
+      style="border-bottom: 1px solid #d1d5db;"
+    />
+  </div>
+
+  <div>
+    <label class="text-xs block mb-1">Mobile Phone</label>
+    <input
+      pInputText
+      [(ngModel)]="card.mobile"
+      name="mobile"
+      (ngModelChange)="onInputChange()"
+      class="w-full border-0 border-b-2 border-[#2e2e38] focus:outline-none focus:border-[#2e2e38]"
+      style="border-bottom: 1px solid #d1d5db;"
+    />
+  </div>
+
+  <div>
+    <label class="text-xs block mb-1">Work Phone</label>
+    <input
+      pInputText
+      [(ngModel)]="card.jobPhone"
+      name="jobPhone"
+      (ngModelChange)="onInputChange()"
+      class="w-full border-0 border-b-2 border-[#2e2e38] focus:outline-none focus:border-[#2e2e38]"
+      style="border-bottom: 1px solid #d1d5db;"
+    />
+  </div>
+
+  <div>
+    <label class="text-xs block mb-1">City</label>
+    <input
+      pInputText
+      [(ngModel)]="card.city"
+      name="city"
+      (ngModelChange)="onInputChange()"
+      class="w-full border-0 border-b-2 border-[#2e2e38] focus:outline-none focus:border-[#2e2e38]"
+      style="border-bottom: 1px solid #d1d5db;"
+    />
+  </div>
+</form>

@@ -1,0 +1,14 @@
+<!-- TOP SECTION (same for both pages) -->
+<app-top-section [step]="showPreview ? 2 : 1"></app-top-section>
+
+<!-- PAGE 1 -->
+<ng-container *ngIf="!showPreview">
+  <app-preview-button (preview)="onPreviewClick()"></app-preview-button>
+  <app-business-card-form [(card)]="card" (submitForm)="onSubmit()"></app-business-card-form>
+</ng-container>
+
+<!-- PAGE 2 -->
+<ng-container *ngIf="showPreview">
+  <app-preview-buttons (goBack)="onGoBack()" (download)="onDownloadCard()"></app-preview-buttons>
+  <app-second-page-preview [card]="card" />
+</ng-container>

@@ -1,0 +1,43 @@
+<div class="bg-[#eaeaf2] px-4 py-3 rounded-t flex justify-between items-center font-sans">
+  <!-- Step 1 -->
+  <div class="flex items-center gap-2">
+    <div
+      class="w-6 h-6 flex items-center justify-center rounded-full text-xs font-medium"
+      [ngClass]="{
+        'bg-[#ffe600] text-[#2e2e38] font-semibold': step === 1,
+        'border border-[#2e2e38] text-[#2e2e38] font-normal': step !== 1
+      }"
+    >
+      1
+    </div>
+    <span
+      [ngClass]="{
+        'text-sm font-semibold text-[#2e2e38]': step === 1,
+        'text-sm text-[#2e2e38]': step !== 1
+      }"
+    >
+      Personal Information
+    </span>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="flex items-center gap-2">
+    <div
+      class="w-6 h-6 flex items-center justify-center rounded-full text-xs font-medium"
+      [ngClass]="{
+        'bg-[#ffe600] text-[#2e2e38] font-semibold': step === 2,
+        'border border-[#2e2e38] text-[#2e2e38] font-normal': step !== 2
+      }"
+    >
+      2
+    </div>
+    <span
+      [ngClass]="{
+        'text-sm font-semibold text-[#2e2e38]': step === 2,
+        'text-sm text-[#2e2e38]': step !== 2
+      }"
+    >
+      Card/QR Preview
+    </span>
+  </div>
+</div>

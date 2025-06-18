@@ -1,0 +1,49 @@
+<h2 class="text-lg font-semibold text-[#2e2e38] mb-4">Expected Card Layout</h2>
+
+<!-- Ligne contenant override + carte -->
+<div class="flex flex-col md:flex-row gap-6 items-start">
+  <!-- Bloc Override -->
+  <div class="text-[#2e2e38] text-sm font-sans">
+    <p class="text-xs mb-2">Optional - If needed override default logo:</p>
+    <div>
+      <span class="font-semibold">Logo:</span>
+      <span class="underline ml-2">EY Logo</span>
+    </div>
+  </div>
+
+  <!-- Carte de visite -->
+  <div class="flex border border-[#2e2e38] bg-[#f5f5f5] rounded p-4 shadow-sm">
+    <!-- Logo EY -->
+    <div class="flex items-start justify-center pr-4 border-r border-[#d1d5db]">
+      <img
+        src="../../../../../../assets/images/logo.svg"
+        alt="EY Logo"
+        class="h-16 w-auto"
+      />
+    </div>
+
+    <!-- Coordonnées -->
+    <div class="pl-4 text-[#2e2e38] text-sm font-sans">
+      <!-- Nom + Poste -->
+      <div class="font-bold text-base mb-1">
+        {{ card.firstName }} {{ card.lastName }}
+      </div>
+      <div class="text-sm mb-3">{{ card.jobTitle }}</div>
+
+      <!-- Contact -->
+      <div class="mb-3">
+        <div><span class="font-semibold">Mobile:</span></div>
+        <div>{{ card.email }}</div>
+        <div>{{ card.mobile }}</div>
+      </div>
+
+      <!-- Adresse -->
+      <div>
+        <div>{{ card.company }}</div>
+        <div>{{ card.address }}</div>
+        <div>{{ card.postalCode }} {{ card.city }}</div>
+        <div>Tunisia</div>
+      </div>
+    </div>
+  </div>
+</div>

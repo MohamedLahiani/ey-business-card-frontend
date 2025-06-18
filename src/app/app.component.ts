@@ -3,9 +3,10 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,                // ✅ This is required if you're using standalone architecture
+  imports: [RouterOutlet],        // ✅ RouterOutlet is used in the HTML
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] // ✅ styleUrls (not styleUrl)
 })
 export class AppComponent {
   title = 'Bcardfront';
