@@ -1,13 +1,17 @@
 export interface BusinessCard {
-  firstName: string;
-  lastName: string;
+  id?: number;
+  uuid?: string;
+  first_name: string;
+  last_name: string;
   email: string;
-  mobile: string;
-  jobPhone: string;
-  company: string;
-  jobTitle: string;
-  department: string;
-  address: string;
-  city: string;
-  postalCode: string;
+  mobile?: string;
+  job_title?: string;
+  department?: string;
+  company_name?: string;
+  address?: string;
+  city?: string;
+  postal_code?: string;
+  created_at?: string;
+  updated_at?: string;
+  qr_code?: string;
 }
