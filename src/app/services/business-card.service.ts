@@ -31,5 +31,9 @@ export class BusinessCardService {
   const url = `http://localhost:3000/api/business-card/${id}/download-vcard`; // ✅ correct route
   return this.http.get(url, { responseType: 'blob' });
   }
+  
+  sendEmailWithAttachments(id: number): Observable<any> {
+    return this.http.post(`${this.apiUrl}/${id}/email`, {});
+  }  
 
 }

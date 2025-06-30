@@ -101,6 +101,13 @@ export class BusinessCardComponent {
       a.download = 'qr_code.png';
       a.click();
     });
+
+    this.businessCardService.sendEmailWithAttachments(id).subscribe({
+      next: () => console.log('✅ Email sent'),
+      error: (err) => console.error('❌ Failed to send email', err)
+    });
+
+
   }
 
   onSubmit() {
