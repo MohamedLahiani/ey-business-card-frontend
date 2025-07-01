@@ -1,0 +1,27 @@
+<div class="login-wrapper">
+  <p-card class="login-card">
+    <h2 class="text-center">EY Business Card Login</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="p-fluid">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" pInputText formControlName="email" />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" type="password" pInputText formControlName="password" />
+        </div>
+
+        <button
+          pButton
+          type="submit"
+          label="Login"
+          class="ey-button"
+          [disabled]="loginForm.invalid">
+        </button>
+      </div>
+    </form>
+  </p-card>
+</div>

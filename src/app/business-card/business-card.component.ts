@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; // ✅ Add OnInit
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TopSectionComponent } from './components/first-page-form/top-section/top-section.component';
@@ -7,6 +7,7 @@ import { BusinessCardFormComponent } from './components/first-page-form/business
 import { PreviewButtonsComponent } from './components/second-page-card-preview/preview-buttons/preview-buttons.component';
 import { SecondPagePreviewComponent } from './components/second-page-card-preview/second-page-preview/second-page-preview.component';
 import { BusinessCardService } from '../services/business-card.service';
+import { HttpClient } from '@angular/common/http'; // ✅ Required for backend call
 
 @Component({
   selector: 'app-business-card',
@@ -23,10 +24,14 @@ import { BusinessCardService } from '../services/business-card.service';
   templateUrl: './business-card.component.html',
   styleUrls: ['./business-card.component.css']
 })
-export class BusinessCardComponent {
+export class BusinessCardComponent implements OnInit { // ✅ Add OnInit
+
   showPreview = false;
 
-  constructor(private businessCardService: BusinessCardService) {}
+  constructor(
+    private businessCardService: BusinessCardService,
+    private http: HttpClient // ✅ Inject HttpClient
+  ) {}
 
   card: {
     id?: number;
@@ -54,6 +59,35 @@ export class BusinessCardComponent {
     postalCode: '1030',
     jobPhone: '0123456789',
   };
+
+ ngOnInit(): void {
+  const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+  if (user?.email) {
+    const encodedEmail = encodeURIComponent(user.email); // ✅ Encode it safely
+
+    this.http.get<any>(`http://localhost:3000/api/business-card/${encodedEmail}`)
+      .subscribe({
+        next: (data) => {
+          this.card = {
+            firstName: data.first_name || '',
+            lastName: data.last_name || '',
+            email: data.email || '',
+            mobile: data.mobile || '',
+            company: data.company_name || '',
+            jobTitle: data.job_title || '',
+            department: data.department || '',
+            address: data.address || '',
+            city: data.city || '',
+            postalCode: data.postal_code || '',
+            jobPhone: data.job_phone || ''
+          };
+        },
+        error: (err) => console.error('Failed to fetch user card:', err)
+      });
+  }
+}
+
 
   onPreviewClick() {
     const payload = {
@@ -106,8 +140,6 @@ export class BusinessCardComponent {
       next: () => console.log('✅ Email sent'),
       error: (err) => console.error('❌ Failed to send email', err)
     });
-
-
   }
 
   onSubmit() {
