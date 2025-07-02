@@ -1,0 +1,25 @@
+.navbar {
+  background-color: #2e2e38;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-family: sans-serif;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 12px;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffe600;
+}

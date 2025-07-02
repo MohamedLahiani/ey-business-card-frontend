@@ -8,6 +8,7 @@ import { PreviewButtonsComponent } from './components/second-page-card-preview/p
 import { SecondPagePreviewComponent } from './components/second-page-card-preview/second-page-preview/second-page-preview.component';
 import { BusinessCardService } from '../services/business-card.service';
 import { HttpClient } from '@angular/common/http'; // ✅ Required for backend call
+import { NavbarComponent } from './components/navbar/navbar.component'; 
 
 @Component({
   selector: 'app-business-card',
@@ -19,6 +20,7 @@ import { HttpClient } from '@angular/common/http'; // ✅ Required for backend c
     PreviewButtonComponent,
     BusinessCardFormComponent,
     PreviewButtonsComponent,
+    NavbarComponent, 
     SecondPagePreviewComponent
   ],
   templateUrl: './business-card.component.html',
@@ -64,7 +66,7 @@ export class BusinessCardComponent implements OnInit { // ✅ Add OnInit
   const user = JSON.parse(localStorage.getItem('user') || '{}');
 
   if (user?.email) {
-    const encodedEmail = encodeURIComponent(user.email); // ✅ Encode it safely
+    const encodedEmail = encodeURIComponent(user.email); 
 
     this.http.get<any>(`http://localhost:3000/api/business-card/${encodedEmail}`)
       .subscribe({
